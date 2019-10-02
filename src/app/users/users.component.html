@@ -7,7 +7,7 @@
       <th>Card</th>
       <th>Qualifications</th>
     </tr>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users" routerLink="/user/{{user.id}}">
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.cardId}}</td>
