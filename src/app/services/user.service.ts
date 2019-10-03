@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, throwError} from "rxjs";
-import {User} from "../shared/models/user.model";
-import {catchError, map} from "rxjs/operators";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { User } from "../shared/models/user.model";
+import { catchError, map } from "rxjs/operators";
+import { environment } from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,17 +16,19 @@ const httpOptions = {
 })
 export class UserService {
 
+  private baseUrl = environment.baseUrl;
+
   constructor(private httpService: HttpClient) { }
 
   public getUser(id: number): Observable<User> {
-    return this.httpService.get<User[]>(`http://localhost:8080/api/v1/user/${id}`, httpOptions).pipe(
+    return this.httpService.get<User[]>(`${this.baseUrl}/user/${id}`, httpOptions).pipe(
       map(data => new User().deserialize(data)),
       catchError(() => throwError('User not found'))
     )
   }
 
   public getAllUsers(): Observable<User[]> {
-    return this.httpService.get<User[]>(`http://localhost:8080/api/v1/user`, httpOptions).pipe(
+    return this.httpService.get<User[]>(`${this.baseUrl}/user`, httpOptions).pipe(
       map(data => data.map(data => new User().deserialize(data)))
     );
   }
