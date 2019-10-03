@@ -11,8 +11,8 @@
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.cardId}}</td>
-      <td *ngFor="let qualification of user.qualifications">
-        <span>{{qualification.name}}</span>
+      <td>
+        <span *ngFor="let qualification of user.qualifications">{{qualification.name}}</span>
       </td>
     </tr>
   </table>
