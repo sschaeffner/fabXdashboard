@@ -1,0 +1,25 @@
+<h2>New User</h2>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Name:<br>
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Wiki Name:<br>
+      <input type="text" formControlName="wikiName">
+    </label>
+    <label>
+      Phone Nr.:<br>
+      <input type="tel" formControlName="phoneNumber">
+    </label>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+
+  <p>
+    Form Value: {{form.value | json }}
+  </p>
+  <p>
+    Form Status: {{form.status}}
+  </p>
+</div>

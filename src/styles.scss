@@ -2,12 +2,12 @@
 /* Global Styles */
 h1 {
   color: #369;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
 h2, h3 {
   color: #444;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
 body {
@@ -15,14 +15,14 @@ body {
 }
 body, input[text], button {
   color: #333;
-  font-family: Cambria, Georgia;
+  font-family: "Helvetica Neue", Cambria, Georgia;
 }
 a {
   cursor: pointer;
   cursor: hand;
 }
 button {
-  font-family: Arial;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   background-color: #eee;
   border: none;
   padding: 5px 10px;
@@ -62,5 +62,5 @@ nav a.active {
 
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
