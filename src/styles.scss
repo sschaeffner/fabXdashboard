@@ -11,7 +11,7 @@ h2, h3 {
   font-weight: lighter;
 }
 body {
-  margin: 2em;
+  width:100%;
 }
 body, input[text], button {
   color: #333;
@@ -39,6 +39,11 @@ button:disabled {
   cursor: auto;
 }
 
+nav {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
 /* Navigation link styles */
 nav a {
   padding: 5px 10px;
@@ -62,5 +67,14 @@ nav a.active {
 
 /* everywhere else */
 * {
+  margin:0;
+  padding: 0;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+div#content {
+  /*width:100%;*/
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1em;
 }

@@ -1,18 +1,23 @@
 div.user {
+  width: 100%;
+  margin-top: 1em;
+
   table {
     border-collapse: collapse;
+    width: 100%;
+    margin-top: 1em;
   }
 
-  table, th, td {
+  th, td {
     /*border: 1px solid black;*/
-    padding: 8px;
-  }
-
-  th {
+    padding: 1em;
     text-align: left;
   }
 
-  tr:nth-of-type(even) {
-    background-color: #eeeeee;
+  tr {
+    border-bottom: 1px solid #000;
+    &:not(:first-child):hover {
+      background-color: #dddddd;
+    }
   }
 }
