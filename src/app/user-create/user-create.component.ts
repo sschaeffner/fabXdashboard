@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import {UserService} from "../services/user.service";
 import {NewUser} from "../shared/models/new-user.model";
+import {User} from "../shared/models/user.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-create',
@@ -16,7 +18,7 @@ export class UserCreateComponent implements OnInit {
     phoneNumber: new FormControl('', Validators.required)
   });
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -27,9 +29,13 @@ export class UserCreateComponent implements OnInit {
     newUser.wikiName = this.form.get('wikiName').value;
     newUser.phoneNumber = this.form.get('phoneNumber').value;
 
-    this.userService.createNewUser(newUser).subscribe(r => console.log("newUser result: %o", r));
-    console.log(this.form.value);
-    console.log(newUser);
+    this.userService.createNewUser(newUser)
+      .subscribe(
+        (user: User) => {
+          console.log("newUser successfully created: %o", user);
+          this.router.navigateByUrl(`/user/${user.id}`);
+        },
+        error => console.error("newUser not successfully created: %o", error)
+      );
   }
-
 }

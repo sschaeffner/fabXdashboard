@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { User } from "../shared/models/user.model";
-import { catchError, map } from "rxjs/operators";
+import {catchError, map, retry} from "rxjs/operators";
 import { environment } from "../../environments/environment";
-import {NewUser} from "../shared/models/new-user.model";
+import { NewUser } from "../shared/models/new-user.model";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,19 +23,21 @@ export class UserService {
 
   public getUser(id: number): Observable<User> {
     return this.httpService.get<User[]>(`${this.baseUrl}/user/${id}`, httpOptions).pipe(
-      map(data => new User().deserialize(data)),
-      catchError(() => throwError('User not found'))
+      retry(3),
+      catchError(() => throwError('User not found')),
+      map(data => new User().deserialize(data))
     );
   }
 
   public getAllUsers(): Observable<User[]> {
     return this.httpService.get<User[]>(`${this.baseUrl}/user`, httpOptions).pipe(
+      retry(3),
       map(data => data.map(data => new User().deserialize(data)))
     );
   }
 
-  public createNewUser(newUser: NewUser) {
-    return this.httpService.post(`${this.baseUrl}/user`, newUser, httpOptions).pipe(
+  public createNewUser(newUser: NewUser): Observable<User> {
+    return this.httpService.post<User>(`${this.baseUrl}/user`, newUser, httpOptions).pipe(
       catchError(val => throwError(`Could not create user: ${val.message} (${val.error}).`))
     );
   }
