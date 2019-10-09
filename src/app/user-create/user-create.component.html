@@ -15,11 +15,5 @@
     </label>
     <button type="submit" [disabled]="!form.valid">Submit</button>
   </form>
-
-  <p>
-    Form Value: {{form.value | json }}
-  </p>
-  <p>
-    Form Status: {{form.status}}
-  </p>
+  <div id="errors">{{error}}</div>
 </div>

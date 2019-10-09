@@ -1,13 +1,35 @@
-<div *ngIf="user">
-  <h2>{{user.name}} Details</h2>
-  <div><span>id: </span>{{user.id}}</div>
-  <div><span>name: </span>{{user.name}}</div>
-  <div><span>wiki name: </span>{{user.wikiName}}</div>
-  <div><span>phone: </span>{{user.phoneNumber}}</div>
-  <div><span>locked: </span>{{user.locked}}</div>
-  <div><span>locked reason: </span>{{user.lockedReason}}</div>
-  <div><span>card ID: </span>{{user.cardId}}</div>
-  <div><span>qualifications: </span>
-    <span *ngFor="let qualification of user.qualifications">{{qualification.name}}</span>
+<div id="user" *ngIf="user">
+  <h2><span class="userId">#{{user.id}}</span> {{user.name}}</h2>
+  <div id="userDetails">
+    <table>
+      <tr>
+        <td><span>name: </span></td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td><span>wiki name: </span></td>
+        <td>{{user.wikiName}}</td>
+      </tr>
+      <tr>
+        <td><span>phone: </span></td>
+        <td>{{user.phoneNumber}}</td>
+      </tr>
+      <tr>
+        <td><span>locked: </span></td>
+        <td>{{user.locked}}</td>
+      </tr>
+      <tr>
+        <td><span>locked reason: </span></td>
+        <td>{{user.lockedReason}}</td>
+      </tr>
+      <tr>
+        <td><span>card ID: </span></td>
+        <td>{{user.cardId}}</td>
+      </tr>
+      <tr>
+        <td><span>qualifications: </span></td>
+        <td><span *ngFor="let qualification of user.qualifications" class="qualification">{{qualification.name}}</span></td>
+      </tr>
+    </table>
   </div>
 </div>

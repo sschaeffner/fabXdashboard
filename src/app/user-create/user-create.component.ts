@@ -12,6 +12,8 @@ import {Router} from "@angular/router";
 })
 export class UserCreateComponent implements OnInit {
 
+  public error = "";
+
   form = new FormGroup({
     name: new FormControl('', Validators.required),
     wikiName: new FormControl('', Validators.required),
@@ -35,7 +37,10 @@ export class UserCreateComponent implements OnInit {
           console.log("newUser successfully created: %o", user);
           this.router.navigateByUrl(`/user/${user.id}`);
         },
-        error => console.error("newUser not successfully created: %o", error)
+        error => {
+          this.error = error;
+          console.error("newUser not successfully created: %o", error);
+        }
       );
   }
 }

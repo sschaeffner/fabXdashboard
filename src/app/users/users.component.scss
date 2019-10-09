@@ -1,17 +1,12 @@
+$base-color: #ff8c00;
+$base-color-light: #FCCC89;
+
 div.user {
   width: 100%;
-  margin-top: 1em;
 
   table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 1em;
-  }
-
-  th, td {
-    /*border: 1px solid black;*/
-    padding: 1em;
-    text-align: left;
   }
 
   tr {
@@ -19,5 +14,25 @@ div.user {
     &:not(:first-child):hover {
       background-color: #dddddd;
     }
+    &:not(:first-child) {
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+
+  th, td {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: left;
+    vertical-align: middle;
+    height: 3em;
+  }
+
+  span.qualification {
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #ffaaaa;
+    border-radius: 8px;
   }
 }

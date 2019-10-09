@@ -1,0 +1,19 @@
+div#userDetails {
+
+  th, td {
+    padding-right: 2em;
+    text-align: left;
+    vertical-align: middle;
+    height: 1.8em;
+  }
+}
+span.userId {
+  color: #333;
+}
+span.qualification {
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #ffaaaa;
+  border-radius: 8px;
+}

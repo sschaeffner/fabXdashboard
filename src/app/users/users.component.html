@@ -12,7 +12,7 @@
       <td>{{user.name}}</td>
       <td>{{user.cardId}}</td>
       <td>
-        <span *ngFor="let qualification of user.qualifications">{{qualification.name}}</span>
+        <span *ngFor="let qualification of user.qualifications" class="qualification">{{qualification.name}}</span>
       </td>
     </tr>
   </table>
