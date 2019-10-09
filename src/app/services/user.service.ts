@@ -5,6 +5,7 @@ import { User } from "../shared/models/user.model";
 import {catchError, map, retry} from "rxjs/operators";
 import { environment } from "../../environments/environment";
 import { NewUser } from "../shared/models/new-user.model";
+import {EditUser} from "../shared/models/edit-user.model";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -39,6 +40,12 @@ export class UserService {
   public createNewUser(newUser: NewUser): Observable<User> {
     return this.httpService.post<User>(`${this.baseUrl}/user`, newUser, httpOptions).pipe(
       catchError(val => throwError(`Could not create user: ${val.message} (${val.error}).`))
+    );
+  }
+
+  public editUser(id: number, editUser: EditUser) {
+    return this.httpService.patch(`${this.baseUrl}/user/${id}`, editUser, httpOptions).pipe(
+      catchError(val => throwError(`Could not edit user: ${val.message} (${val.error}).`))
     );
   }
 }

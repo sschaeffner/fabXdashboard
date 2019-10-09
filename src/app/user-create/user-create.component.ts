@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class UserCreateComponent implements OnInit {
 
-  public error = "";
+  error = "";
 
   form = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -20,7 +20,10 @@ export class UserCreateComponent implements OnInit {
     phoneNumber: new FormControl('', Validators.required)
   });
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }

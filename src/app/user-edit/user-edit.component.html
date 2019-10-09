@@ -1,0 +1,28 @@
+<div id="user" *ngIf="user">
+  <h2><span class="userId">#{{user.id}}</span> {{user.name}}</h2>
+  <div id="userEdit">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Name:<br>
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        wikiName:<br>
+        <input type="text" formControlName="wikiName">
+      </label>
+      <label>
+        Phone Nr.:<br>
+        <input type="text" formControlName="phoneNumber">
+      </label>
+      <label>
+        Locked: <input type="checkbox" formControlName="locked">
+      </label>
+      <label>
+        Locked Reason:<br>
+        <input type="text" formControlName="lockedReason">
+      </label>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+  </div>
+  <div id="errors">{{error}}</div>
+</div>
