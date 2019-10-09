@@ -1,4 +1,5 @@
 div#userDetails {
+  margin-top:1em;
 
   th, td {
     padding-right: 2em;
@@ -9,6 +10,15 @@ div#userDetails {
 }
 span.userId {
   color: #333;
+}
+div.qualificationRow {
+  padding-top: .25em;
+  padding-bottom: .25em;
+
+  label input {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 }
 span.qualification {
   padding: 5px 10px;

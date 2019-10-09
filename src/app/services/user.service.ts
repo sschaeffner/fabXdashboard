@@ -6,12 +6,7 @@ import {catchError, map, retry} from "rxjs/operators";
 import { environment } from "../../environments/environment";
 import { NewUser } from "../shared/models/new-user.model";
 import {EditUser} from "../shared/models/edit-user.model";
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    "Authorization": "Basic " + btoa("admin1:demopassword")
-  })
-};
+import {LoginService} from "./login.service";
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +15,13 @@ export class UserService {
 
   private baseUrl = environment.baseUrl;
 
-  constructor(private httpService: HttpClient) { }
+  constructor(
+    private httpService: HttpClient,
+    private loginService: LoginService
+  ) { }
 
   public getUser(id: number): Observable<User> {
-    return this.httpService.get<User[]>(`${this.baseUrl}/user/${id}`, httpOptions).pipe(
+    return this.httpService.get<User[]>(`${this.baseUrl}/user/${id}`, this.loginService.getOptions()).pipe(
       retry(3),
       catchError(() => throwError('User not found')),
       map(data => new User().deserialize(data))
@@ -31,20 +29,20 @@ export class UserService {
   }
 
   public getAllUsers(): Observable<User[]> {
-    return this.httpService.get<User[]>(`${this.baseUrl}/user`, httpOptions).pipe(
+    return this.httpService.get<User[]>(`${this.baseUrl}/user`, this.loginService.getOptions()).pipe(
       retry(3),
       map(data => data.map(data => new User().deserialize(data)))
     );
   }
 
   public createNewUser(newUser: NewUser): Observable<User> {
-    return this.httpService.post<User>(`${this.baseUrl}/user`, newUser, httpOptions).pipe(
+    return this.httpService.post<User>(`${this.baseUrl}/user`, newUser, this.loginService.getOptions()).pipe(
       catchError(val => throwError(`Could not create user: ${val.message} (${val.error}).`))
     );
   }
 
   public editUser(id: number, editUser: EditUser) {
-    return this.httpService.patch(`${this.baseUrl}/user/${id}`, editUser, httpOptions).pipe(
+    return this.httpService.patch(`${this.baseUrl}/user/${id}`, editUser, this.loginService.getOptions()).pipe(
       catchError(val => throwError(`Could not edit user: ${val.message} (${val.error}).`))
     );
   }

@@ -1,5 +1,6 @@
 <div id="user" *ngIf="user">
   <h2><span class="userId">#{{user.id}}</span> {{user.name}}</h2>
+  <button routerLink="/user/{{user.id}}/edit">Edit</button>
   <div id="userDetails">
     <table>
       <tr>
@@ -32,5 +33,13 @@
       </tr>
     </table>
   </div>
-  <button routerLink="/user/{{user.id}}/edit">Edit</button>
+  <div id="userQualifications">
+    <div class="qualificationRow" *ngFor="let qualification of qualifications">
+      <label>
+        <input type="checkbox">
+        <span class="qualification">{{qualification.name}}</span>
+      </label>
+      <br>
+    </div>
+  </div>
 </div>
