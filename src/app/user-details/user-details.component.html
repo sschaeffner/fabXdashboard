@@ -29,14 +29,14 @@
       </tr>
       <tr>
         <td><span>qualifications: </span></td>
-        <td><span *ngFor="let qualification of user.qualifications" class="qualification">{{qualification.name}}</span></td>
+        <td></td>
       </tr>
     </table>
   </div>
   <div id="userQualifications">
     <div class="qualificationRow" *ngFor="let qualification of qualifications">
       <label>
-        <input type="checkbox">
+        <input type="checkbox" [(ngModel)]="qualificationsForUser[qualification.id]" (ngModelChange)="toggleQualification(qualification.id, $event)">
         <span class="qualification">{{qualification.name}}</span>
       </label>
       <br>

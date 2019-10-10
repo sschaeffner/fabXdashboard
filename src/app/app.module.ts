@@ -8,7 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserCreateComponent } from './user-create/user-create.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
@@ -24,7 +24,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

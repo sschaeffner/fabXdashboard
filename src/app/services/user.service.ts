@@ -46,4 +46,18 @@ export class UserService {
       catchError(val => throwError(`Could not edit user: ${val.message} (${val.error}).`))
     );
   }
+
+  public addQualification(userId: number, qualificationId: number) {
+    return this.httpService.post(`${this.baseUrl}/user/${userId}/qualifications`,
+      { 'userId' : userId, 'qualificationId' : qualificationId},
+      this.loginService.getOptions()).pipe(
+        catchError(val => throwError(`Could not add qualification: ${val.message} (${val.error}).`))
+    );
+  }
+
+  public removeQualification(userId: number, qualificationId: number) {
+    return this.httpService.delete(`${this.baseUrl}/user/${userId}/qualifications/${qualificationId}`, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not remove qualification: ${val.message} (${val.error}).`))
+    );
+  }
 }
