@@ -16,6 +16,7 @@ export class UserDetailsComponent implements OnInit {
   user: User;
   qualifications: Qualification[];
   qualificationsForUser: {[k: number]: boolean} = {};
+  showSpinnerForQualifications: boolean = false;
 
 
   constructor(
@@ -51,11 +52,13 @@ export class UserDetailsComponent implements OnInit {
   }
 
   toggleQualification(id: number, newValue: boolean): void {
+    this.showSpinnerForQualifications = true;
     console.log("toggling qualification %o to %o", id, newValue);
     if (newValue) {
       this.userService.addQualification(this.user.id, id).subscribe(
         () => {
           console.log("addQualification successful");
+          this.showSpinnerForQualifications = false;
         },
         error => {
           console.log("addQualification not successful: %o", error)
@@ -64,6 +67,7 @@ export class UserDetailsComponent implements OnInit {
       this.userService.removeQualification(this.user.id, id).subscribe(
         () => {
           console.log("removeQualification successful");
+          this.showSpinnerForQualifications = false;
         },
         error => {
           console.log("removeQualification not successful: %o", error)
