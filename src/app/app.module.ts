@@ -10,6 +10,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     UsersComponent,
     UserDetailsComponent,
     UserCreateComponent,
-    UserEditComponent
+    UserEditComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
