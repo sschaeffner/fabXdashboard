@@ -18,23 +18,6 @@ div#userQualifications {
   position: relative;
 }
 
-div.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1002;
-  background-color: rgba(255, 255, 255, 0.5);
-
-  div.spinner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-  }
-}
-
 div.qualificationRow {
   padding-top: .25em;
   padding-bottom: .25em;
