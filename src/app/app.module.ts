@@ -13,6 +13,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { httpInterceptorProviders } from "./http-interceptors";
+import {NgProgressModule} from "@ngx-progressbar/core";
+import {NgProgressHttpModule} from "@ngx-progressbar/http";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,12 @@ import { httpInterceptorProviders } from "./http-interceptors";
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgProgressModule.withConfig({
+      color: '#FA9112',
+      spinner: false
+    }),
+    NgProgressHttpModule
   ],
   providers: [
     httpInterceptorProviders
