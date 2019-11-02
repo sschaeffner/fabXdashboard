@@ -15,7 +15,8 @@ export class UserCreateComponent implements OnInit {
   error = "";
 
   form = new FormGroup({
-    name: new FormControl('', Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
     wikiName: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required)
   });
@@ -30,7 +31,8 @@ export class UserCreateComponent implements OnInit {
 
   onSubmit() {
     let newUser = new NewUser();
-    newUser.name = this.form.get('name').value;
+    newUser.firstName = this.form.get('firstName').value;
+    newUser.lastName = this.form.get('lastName').value;
     newUser.wikiName = this.form.get('wikiName').value;
     newUser.phoneNumber = this.form.get('phoneNumber').value;
 

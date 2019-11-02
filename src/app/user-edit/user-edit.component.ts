@@ -17,7 +17,8 @@ export class UserEditComponent implements OnInit {
   user: User;
 
   form = new FormGroup({
-    name: new FormControl('', Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
     wikiName: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     locked: new FormControl(''),
@@ -40,7 +41,8 @@ export class UserEditComponent implements OnInit {
       this.user = user;
 
       this.form.patchValue({
-        name: this.user.name,
+        firstName: this.user.firstName,
+        lastName: this.user.lastName,
         wikiName: this.user.wikiName,
         phoneNumber: this.user.phoneNumber,
         locked: this.user.locked,
@@ -51,7 +53,8 @@ export class UserEditComponent implements OnInit {
 
   onSubmit() {
     let editUser = new EditUser();
-    editUser.name = this.form.get('name').value;
+    editUser.firstName = this.form.get('firstName').value;
+    editUser.lastName = this.form.get('lastName').value;
     editUser.wikiName = this.form.get('wikiName').value;
     editUser.phoneNumber = this.form.get('phoneNumber').value;
     editUser.locked = this.form.get('locked').value;

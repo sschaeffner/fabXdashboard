@@ -1,5 +1,6 @@
 export class NewUser {
-  public name: string;
+  public firstName: string;
+  public lastName: string;
   public wikiName: string;
   public phoneNumber: string;
 }

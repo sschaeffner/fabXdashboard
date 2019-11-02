@@ -2,8 +2,12 @@
 <div>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <label>
-      Name:<br>
-      <input type="text" formControlName="name">
+      First Name:<br>
+      <input type="text" formControlName="firstName">
+    </label>
+    <label>
+      Last Name:<br>
+      <input type="text" formControlName="lastName">
     </label>
     <label>
       Wiki Name:<br>

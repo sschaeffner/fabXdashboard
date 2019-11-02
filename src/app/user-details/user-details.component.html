@@ -1,11 +1,15 @@
 <div id="user" *ngIf="user">
-  <h2><span class="userId">#{{user.id}}</span> {{user.name}}</h2>
+  <h2><span class="userId">#{{user.id}}</span> {{user.firstName}} {{user.lastName}}</h2>
   <button routerLink="/user/{{user.id}}/edit">Edit</button>
   <div id="userDetails">
     <table>
       <tr>
-        <td><span>name: </span></td>
-        <td>{{user.name}}</td>
+        <td><span>first name: </span></td>
+        <td>{{user.firstName}}</td>
+      </tr>
+      <tr>
+        <td><span>last name: </span></td>
+        <td>{{user.lastName}}</td>
       </tr>
       <tr>
         <td><span>wiki name: </span></td>
