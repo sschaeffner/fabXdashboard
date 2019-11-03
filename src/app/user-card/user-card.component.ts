@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {User} from "../shared/models/user.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../services/user.service";
@@ -19,11 +19,13 @@ export class UserCardComponent implements OnInit {
   form = new FormGroup({
     cardIdAndSecret: new FormControl('', Validators.required)
   });
+  qrCodeReading: boolean = false;
 
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private elementRef : ElementRef
   ) { }
 
   ngOnInit() {
@@ -35,9 +37,11 @@ export class UserCardComponent implements OnInit {
     this.userService.getUser(id).subscribe(user => {
       this.user = user;
 
-      this.form.patchValue({
-        cardIdAndSecret: `${this.user.cardId}\n${this.user.cardSecret}`
-      })
+      if (this.user.cardId) {
+        this.form.patchValue({
+          cardIdAndSecret: `${this.user.cardId}\n${this.user.cardSecret}`
+        })
+      }
     });
   }
 
@@ -77,5 +81,18 @@ export class UserCardComponent implements OnInit {
           console.error("user card not successfully edited: %o", error);
         }
       );
+  }
+
+  qrCodeReader() {
+    console.log("qr");
+    this.qrCodeReading = true;
+  }
+
+  onQrSuccess(event: string) {
+    console.log(`qr success: ${event}`);
+
+    this.form.patchValue({
+      cardIdAndSecret: event
+    })
   }
 }

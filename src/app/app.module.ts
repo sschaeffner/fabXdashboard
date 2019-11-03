@@ -13,9 +13,10 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { httpInterceptorProviders } from "./http-interceptors";
-import {NgProgressModule} from "@ngx-progressbar/core";
-import {NgProgressHttpModule} from "@ngx-progressbar/http";
+import { NgProgressModule } from "@ngx-progressbar/core";
+import { NgProgressHttpModule } from "@ngx-progressbar/http";
 import { UserCardComponent } from './user-card/user-card.component';
+import { ZXingScannerModule } from "@zxing/ngx-scanner";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UserCardComponent } from './user-card/user-card.component';
       color: '#FA9112',
       spinner: false
     }),
-    NgProgressHttpModule
+    NgProgressHttpModule,
+    ZXingScannerModule
   ],
   providers: [
     httpInterceptorProviders
