@@ -6,6 +6,7 @@ import {UserCreateComponent} from "./user-create/user-create.component";
 import {UserEditComponent} from "./user-edit/user-edit.component";
 import {LoginComponent} from "./login/login.component";
 import {LogoutComponent} from "./logout/logout.component";
+import {UserCardComponent} from "./user-card/user-card.component";
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path : 'user', component: UsersComponent },
   { path : 'user/create', component: UserCreateComponent },
   { path : 'user/:id', component: UserDetailsComponent },
-  { path : 'user/:id/edit', component: UserEditComponent }
+  { path : 'user/:id/edit', component: UserEditComponent },
+  { path : 'user/:id/setCard', component: UserCardComponent }
 ];
 
 @NgModule({

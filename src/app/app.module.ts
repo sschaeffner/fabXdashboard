@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { httpInterceptorProviders } from "./http-interceptors";
 import {NgProgressModule} from "@ngx-progressbar/core";
 import {NgProgressHttpModule} from "@ngx-progressbar/http";
+import { UserCardComponent } from './user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NgProgressHttpModule} from "@ngx-progressbar/http";
     UserCreateComponent,
     UserEditComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    UserCardComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,13 @@
+<div id="user" *ngIf="user">
+  <h2><span class="userId">#{{user.id}}</span> {{user.firstName}} {{user.lastName}}</h2>
+  <div id="userCard">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        CardId and cardSecret:<br>
+        <textarea name="Text1" rows="2" formControlName="cardIdAndSecret"></textarea>
+      </label>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+  </div>
+  <div id="errors">{{error}}</div>
+</div>
