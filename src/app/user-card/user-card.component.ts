@@ -24,8 +24,7 @@ export class UserCardComponent implements OnInit {
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router,
-    private elementRef : ElementRef
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -90,6 +89,8 @@ export class UserCardComponent implements OnInit {
 
   onQrSuccess(event: string) {
     console.log(`qr success: ${event}`);
+
+    this.qrCodeReading = false;
 
     this.form.patchValue({
       cardIdAndSecret: event
