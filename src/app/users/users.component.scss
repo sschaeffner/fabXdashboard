@@ -1,5 +1,6 @@
 $base-color: #ff8c00;
 $base-color-light: #FCCC89;
+$break-small: 800px;
 
 div.user {
   width: 100%;
@@ -31,10 +32,20 @@ div.user {
   span.qualification {
     padding: 5px 10px;
     margin-right: 5px;
+    margin-top:2px;
+    margin-bottom:2px;
     text-decoration: none;
     display: inline-block;
     background-color: #4603AD;
     color: #eeeeee;
     border-radius: 8px;
+
+    @media screen and (max-width: $break-small) {
+      font-size: 0;
+      width: 0;
+      height: 0;
+      padding: 10px 10px;
+      border-radius: 10px;
+    }
   }
 }
