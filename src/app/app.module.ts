@@ -17,6 +17,7 @@ import { NgProgressModule } from "@ngx-progressbar/core";
 import { NgProgressHttpModule } from "@ngx-progressbar/http";
 import { UserCardComponent } from './user-card/user-card.component';
 import { ZXingScannerModule } from "@zxing/ngx-scanner";
+import { QualificationBubbleComponent } from './qualification-bubble/qualification-bubble.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ZXingScannerModule } from "@zxing/ngx-scanner";
     UserEditComponent,
     LoginComponent,
     LogoutComponent,
-    UserCardComponent
+    UserCardComponent,
+    QualificationBubbleComponent
   ],
   imports: [
     CommonModule,

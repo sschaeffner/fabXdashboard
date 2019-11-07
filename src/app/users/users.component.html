@@ -12,7 +12,7 @@
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>
-        <span *ngFor="let qualification of user.qualifications" class="qualification" [ngStyle]="{'background-color': qualification.colour}">{{qualification.name}}</span>
+        <app-qualification-tag *ngFor="let q of user.qualifications" [qualification]="q" smallTags="true"></app-qualification-tag>
       </td>
     </tr>
   </table>
