@@ -18,6 +18,11 @@ import { NgProgressHttpModule } from "@ngx-progressbar/http";
 import { UserCardComponent } from './user-card/user-card.component';
 import { ZXingScannerModule } from "@zxing/ngx-scanner";
 import { QualificationBubbleComponent } from './qualification-bubble/qualification-bubble.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from "@angular/material/table";
+import { MatSortModule } from "@angular/material/sort";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -43,7 +48,12 @@ import { QualificationBubbleComponent } from './qualification-bubble/qualificati
       spinner: false
     }),
     NgProgressHttpModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     httpInterceptorProviders

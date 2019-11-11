@@ -9,23 +9,21 @@ div.user {
     border-collapse: collapse;
     width: 100%;
   }
-
-  tr {
-    border-bottom: 1px solid #000;
-    &:not(:first-child):hover {
-      background-color: #dddddd;
-    }
-    &:not(:first-child) {
-      cursor: pointer;
-      cursor: hand;
-    }
+  .mat-form-field {
+    width: 100%;
   }
-
-  th, td {
-    padding-left: .5em;
-    padding-right: .5em;
-    text-align: left;
-    vertical-align: middle;
-    height: 3em;
+  .mat-header-cell {
+    font-size: initial;
+    font-weight: bold;
+    color: #000000;
+  }
+  .mat-cell {
+    font-size: initial;
+    font-family: "Helvetica Neue", Arial, serif;
+  }
+  .mat-row:hover {
+    cursor: pointer;
+    cursor: hand;
+    background-color: #dddddd;
   }
 }
