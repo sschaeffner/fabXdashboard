@@ -60,4 +60,10 @@ export class UserService {
       catchError(val => throwError(`Could not remove qualification: ${val.message} (${val.error}).`))
     );
   }
+
+  public deleteUser(userId: number) {
+    return this.httpService.delete(`${this.baseUrl}/user/${userId}`, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not delete user: ${val.message} (${val.error}).`))
+    )
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from "../shared/models/user.model";
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { UserService } from "../services/user.service";
 import { Qualification } from "../shared/models/qualification.model";
 import { QualificationService } from "../services/qualification.service";
@@ -20,6 +20,7 @@ export class UserDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private userService: UserService,
     private qualificationService: QualificationService
   ) { }
@@ -67,6 +68,20 @@ export class UserDetailsComponent implements OnInit {
         },
         error => {
           console.log("removeQualification not successful: %o", error)
+        });
+    }
+  }
+
+  deleteUser() {
+    let confirmDelete = confirm(`Delete user ${this.user.firstName} ${this.user.lastName}?`);
+    if (confirmDelete) {
+      this.userService.deleteUser(this.user.id).subscribe(
+        () => {
+          this.router.navigateByUrl('/user');
+        },
+        error => {
+          alert(`Could not delete user! Are all qualifications removed? \n${error}`);
+          console.log("");
         });
     }
   }

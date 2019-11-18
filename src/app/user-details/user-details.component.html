@@ -1,7 +1,11 @@
 <div id="user" *ngIf="user">
   <h2><span class="userId">#{{user.id}}</span> {{user.firstName}} {{user.lastName}}</h2>
-  <button routerLink="/user/{{user.id}}/edit">Edit</button>
-  <button routerLink="/user/{{user.id}}/setCard">Set Card</button>
+
+  <div id="navBar">
+    <button routerLink="/user/{{user.id}}/edit">Edit</button>
+    <button routerLink="/user/{{user.id}}/setCard">Set Card</button>
+    <button (click)="deleteUser()" class="deleteBtn">Delete</button>
+  </div>
   <div id="userDetails">
     <table>
       <tr>

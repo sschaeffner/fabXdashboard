@@ -1,3 +1,15 @@
+div#navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+div#navBar button.deleteBtn {
+  margin-left: auto;
+  justify-self: flex-end;
+  background-color: red;
+}
+
 div#userDetails {
   margin-top:1em;
 
