@@ -21,7 +21,11 @@ export class QualificationService {
   public getAllQualifications(): Observable<Qualification[]> {
     return this.httpService.get<Qualification[]>(`${this.baseUrl}/qualification`, this.loginService.getOptions()).pipe(
       retry(3),
-      map(data => data.map(data => new Qualification().deserialize(data)))
+      map(data => {
+        let qualifications = data.map(data => new Qualification().deserialize(data));
+        qualifications.sort((q1, q2) => q1.orderNr - q2.orderNr);
+        return qualifications;
+      })
     );
   }
 }

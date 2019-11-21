@@ -16,6 +16,7 @@ export class User implements Deserializable {
   deserialize(input: any): this {
     Object.assign(this, input);
     this.qualifications = input.qualifications.map(qualification => new Qualification().deserialize(qualification));
+    this.qualifications.sort((q1, q2) => q1.orderNr - q2.orderNr);
     return this;
   }
 }
