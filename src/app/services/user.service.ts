@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { User } from "../shared/models/user.model";
-import {catchError, map, retry} from "rxjs/operators";
+import { catchError, map, retry } from "rxjs/operators";
 import { environment } from "../../environments/environment";
 import { NewUser } from "../shared/models/new-user.model";
-import {EditUser} from "../shared/models/edit-user.model";
-import {LoginService} from "./login.service";
+import { EditUser } from "../shared/models/edit-user.model";
+import { LoginService } from "./login.service";
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +21,9 @@ export class UserService {
   ) { }
 
   public getUser(id: number): Observable<User> {
-    return this.httpService.get<User[]>(`${this.baseUrl}/user/${id}`, this.loginService.getOptions()).pipe(
+    return this.httpService.get<User>(`${this.baseUrl}/user/${id}`, this.loginService.getOptions()).pipe(
       retry(3),
-      catchError(() => throwError('User not found')),
+      catchError(val => throwError(`User not found: ${val.message} (${val.error})`)),
       map(data => new User().deserialize(data))
     );
   }

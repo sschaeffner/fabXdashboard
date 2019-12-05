@@ -1,0 +1,25 @@
+<div class="device">
+  <nav class="subNav">
+    <a routerLink="/device/create">New Device</a>
+  </nav>
+
+  <h2>Devices</h2>
+
+  <table mat-table [dataSource]="dataSource" matSort matSortDisableClear matSortActive="id" matSortDirection="asc">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+      <td mat-cell *matCellDef="let device">{{device.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>name</th>
+      <td mat-cell *matCellDef="let device">{{device.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="mac">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>mac</th>
+      <td mat-cell *matCellDef="let device">{{device.mac}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let device; columns: displayedColumns" routerLink="/device/{{device.id}}"></tr>
+  </table>
+</div>

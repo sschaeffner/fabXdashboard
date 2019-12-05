@@ -24,6 +24,8 @@ import { MatSortModule } from "@angular/material/sort";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { QualificationsComponent } from './qualifications/qualifications.component';
+import { DevicesComponent } from './devices/devices.component';
+import { ToolsComponent } from './tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { QualificationsComponent } from './qualifications/qualifications.compone
     LogoutComponent,
     UserCardComponent,
     QualificationBubbleComponent,
-    QualificationsComponent
+    QualificationsComponent,
+    DevicesComponent,
+    ToolsComponent
   ],
   imports: [
     CommonModule,

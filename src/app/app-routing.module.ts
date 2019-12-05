@@ -8,6 +8,8 @@ import { LoginComponent } from "./login/login.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { UserCardComponent } from "./user-card/user-card.component";
 import {QualificationsComponent} from "./qualifications/qualifications.component";
+import {DevicesComponent} from "./devices/devices.component";
+import {ToolsComponent} from "./tools/tools.component";
 
 
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path : 'user/:id', component: UserDetailsComponent },
   { path : 'user/:id/edit', component: UserEditComponent },
   { path : 'user/:id/setCard', component: UserCardComponent },
-  { path : 'qualification', component: QualificationsComponent }
+  { path : 'qualification', component: QualificationsComponent },
+  { path : 'device', component: DevicesComponent },
+  { path : 'tool', component: ToolsComponent }
 ];
 
 @NgModule({
