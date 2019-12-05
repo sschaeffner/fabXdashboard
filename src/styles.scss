@@ -5,6 +5,8 @@ $base-color: #FA9112;
 $base-color-light: #FCCC89;
 $button-color: #eeeeee;
 $button-color-hover: #f3f3f3;
+$button-color-subnav: #dcdcdc;
+$button-color-subnav-hover: #ebebeb;
 
 h1 {
   color: $base-color;
@@ -16,7 +18,7 @@ h2, h3 {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1.8em;
-  margin-bottom: 1em;
+  margin-top: 0.7em;
 }
 body {
   width:100%;
@@ -49,11 +51,12 @@ button:disabled {
 }
 
 nav {
-  margin-top: 1em;
-  margin-bottom: 2em;
+  //margin-top: 1em;
+  margin-bottom: 0em;
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap-reverse;
   justify-content: flex-start;
 }
 
@@ -81,6 +84,18 @@ nav a:hover {
 }
 nav a.active {
   color: #039be5;
+}
+
+nav.subNav {
+  margin-top: 0;
+}
+
+nav.subNav a {
+  background-color: $button-color-subnav;
+}
+
+nav.subNav a:hover {
+  background-color: $button-color-subnav-hover;
 }
 
 /* everywhere else */

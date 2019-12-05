@@ -1,5 +1,6 @@
 <div id="user" *ngIf="user">
   <h2><span class="userId">#{{user.id}}</span> {{user.firstName}} {{user.lastName}}</h2>
+
   <div id="userEdit">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <label>

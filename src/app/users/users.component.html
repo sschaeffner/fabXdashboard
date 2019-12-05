@@ -1,7 +1,11 @@
 <div class="user">
+  <nav class="subNav">
+    <a routerLink="/user/create">New User</a>
+  </nav>
+
   <h2>Users</h2>
 
-  <mat-form-field>
+  <mat-form-field class="filter">
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
 

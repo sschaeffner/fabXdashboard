@@ -1,0 +1,22 @@
+div.qualification {
+  width: 100%;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .mat-header-cell {
+    font-size: initial;
+    font-weight: bold;
+    colour: #000000;
+  }
+  .mat-cell {
+    font-size: initial;
+    font-family: "Helvetica Neue", Arial, serif;
+  }
+  .mat-row:hover {
+    cursor: pointer;
+    cursor: hand;
+    background-color: #dddddd;
+  }
+}

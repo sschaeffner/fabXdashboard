@@ -23,6 +23,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { QualificationsComponent } from './qualifications/qualifications.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatInputModule} from "@angular/material/input";
     LoginComponent,
     LogoutComponent,
     UserCardComponent,
-    QualificationBubbleComponent
+    QualificationBubbleComponent,
+    QualificationsComponent
   ],
   imports: [
     CommonModule,
