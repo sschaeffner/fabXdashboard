@@ -29,6 +29,7 @@ export class ToolsComponent implements OnInit {
       this.tools = tools;
 
       this.dataSource = new MatTableDataSource<Tool>(this.tools);
+      this.dataSource.sort = this.sort;
     })
   }
 }

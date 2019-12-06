@@ -29,6 +29,7 @@ export class DevicesComponent implements OnInit {
       this.devices = devices;
 
       this.dataSource = new MatTableDataSource<Device>(this.devices);
+      this.dataSource.sort = this.sort;
     })
   }
 }

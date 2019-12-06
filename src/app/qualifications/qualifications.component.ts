@@ -29,6 +29,7 @@ export class QualificationsComponent implements OnInit {
       this.qualifications = qualifications;
 
       this.dataSource = new MatTableDataSource<Qualification>(this.qualifications);
+      this.dataSource.sort = this.sort;
     })
   }
 }
