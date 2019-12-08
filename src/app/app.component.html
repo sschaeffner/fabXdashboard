@@ -1,12 +1,14 @@
 <ng-progress></ng-progress>
 <div id="content">
-  <h1>{{title}}</h1>
+  <div id="topRow">
+    <h1>{{title}}</h1>
+    <a routerLink="/logout" class="logoutBtn">Logout</a>
+  </div>
   <nav>
     <a routerLink="/user">Users</a>
     <a routerLink="/device">Devices</a>
     <a routerLink="/tool">Tools</a>
     <a routerLink="/qualification">Qualifications</a>
-    <a routerLink="/logout" class="logoutBtn">Logout</a>
   </nav>
   <router-outlet></router-outlet>
 </div>

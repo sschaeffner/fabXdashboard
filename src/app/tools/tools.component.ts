@@ -11,7 +11,7 @@ import {ToolService} from "../services/tool.service";
 })
 export class ToolsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'deviceId', 'name', 'pin', 'toolType', 'qualifications'];
+  displayedColumns: string[] = ['id', 'name', 'qualifications'];
 
   tools: Tool[] = [];
   dataSource: MatTableDataSource<Tool> = new MatTableDataSource<Tool>();

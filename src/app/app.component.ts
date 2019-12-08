@@ -7,7 +7,7 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fabX Dashboard';
+  title = 'fabX';
   constructor(private meta: Meta) {
     this.meta.addTag({ name: 'viewport', content: 'width=device-width, initial-scale=1.0' });
   }

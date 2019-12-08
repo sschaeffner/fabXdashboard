@@ -11,7 +11,7 @@ import {QualificationService} from "../services/qualification.service";
 })
 export class QualificationsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'orderNr', 'name', 'description'];
+  displayedColumns: string[] = ['id', 'name'];
 
   qualifications: Qualification[] = [];
   dataSource: MatTableDataSource<Qualification> = new MatTableDataSource<Qualification>();
