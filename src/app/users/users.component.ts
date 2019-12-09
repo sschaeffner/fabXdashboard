@@ -1,8 +1,8 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {User} from "../shared/models/user.model";
 import {Qualification} from "../shared/models/qualification.model";
 import {UserService} from "../services/user.service";
-import {MatTable, MatTableDataSource} from "@angular/material/table";
+import {MatTableDataSource} from "@angular/material/table";
 import {MatSort} from "@angular/material/sort";
 
 @Component({

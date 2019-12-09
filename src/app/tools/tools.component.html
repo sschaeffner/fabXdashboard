@@ -15,7 +15,7 @@
       <td mat-cell *matCellDef="let tool">{{tool.name}}</td>
     </ng-container>
     <ng-container matColumnDef="qualifications">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Qualifications</th>
+      <th mat-header-cell *matHeaderCellDef>Qualifications</th>
       <td mat-cell *matCellDef="let tool">
         <app-qualification-tag *ngFor="let q of tool.qualifications" [qualification]="q" smallTags="true"></app-qualification-tag>
       </td>

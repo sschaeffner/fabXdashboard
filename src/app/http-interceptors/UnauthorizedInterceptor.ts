@@ -1,9 +1,9 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
-import { Router } from "@angular/router";
-import { catchError } from "rxjs/operators";
-import { LoginService } from "../services/login.service";
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
+import {Injectable} from "@angular/core";
+import {Observable, throwError} from "rxjs";
+import {Router} from "@angular/router";
+import {catchError} from "rxjs/operators";
+import {LoginService} from "../services/login.service";
 
 @Injectable()
 export class UnauthorizedInterceptor implements HttpInterceptor {

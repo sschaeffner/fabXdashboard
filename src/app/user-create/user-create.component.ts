@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../services/user.service";
 import {NewUser} from "../shared/models/new-user.model";
 import {User} from "../shared/models/user.model";

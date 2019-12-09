@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ToolService } from './tool.service';
+import {ToolService} from './tool.service';
 
 describe('ToolService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { environment } from "../../environments/environment";
-import { LoginService } from "./login.service";
-import { HttpClient } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
-import { Device } from "../shared/models/device.model";
-import { catchError, map, retry } from "rxjs/operators";
-import { NewDevice } from "../shared/models/new-device.model";
-import { EditDevice } from "../shared/models/edit-device.model";
+import {Injectable} from '@angular/core';
+import {environment} from "../../environments/environment";
+import {LoginService} from "./login.service";
+import {HttpClient} from "@angular/common/http";
+import {Observable, throwError} from "rxjs";
+import {Device} from "../shared/models/device.model";
+import {catchError, map, retry} from "rxjs/operators";
+import {NewDevice} from "../shared/models/new-device.model";
+import {EditDevice} from "../shared/models/edit-device.model";
 
 @Injectable({
   providedIn: 'root'

@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { User } from "../shared/models/user.model";
+import {Component, OnInit} from '@angular/core';
+import {User} from "../shared/models/user.model";
 import {ActivatedRoute, Router} from "@angular/router";
-import { UserService } from "../services/user.service";
-import { Qualification } from "../shared/models/qualification.model";
-import { QualificationService } from "../services/qualification.service";
-import {forkJoin, Observable, zip} from "rxjs";
+import {UserService} from "../services/user.service";
+import {Qualification} from "../shared/models/qualification.model";
+import {QualificationService} from "../services/qualification.service";
+import {forkJoin, Observable} from "rxjs";
 
 @Component({
   selector: 'app-user-details',

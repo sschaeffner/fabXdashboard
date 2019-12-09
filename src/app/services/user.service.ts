@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
-import { User } from "../shared/models/user.model";
-import { catchError, map, retry } from "rxjs/operators";
-import { environment } from "../../environments/environment";
-import { NewUser } from "../shared/models/new-user.model";
-import { EditUser } from "../shared/models/edit-user.model";
-import { LoginService } from "./login.service";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable, throwError} from "rxjs";
+import {User} from "../shared/models/user.model";
+import {catchError, map, retry} from "rxjs/operators";
+import {environment} from "../../environments/environment";
+import {NewUser} from "../shared/models/new-user.model";
+import {EditUser} from "../shared/models/edit-user.model";
+import {LoginService} from "./login.service";
 
 @Injectable({
   providedIn: 'root'

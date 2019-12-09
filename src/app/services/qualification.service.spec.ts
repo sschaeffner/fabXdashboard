@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { QualificationService } from './qualification.service';
+import {QualificationService} from './qualification.service';
 
 describe('QualificationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

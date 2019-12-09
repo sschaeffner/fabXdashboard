@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { QualificationBubbleComponent } from './qualification-bubble.component';
+import {QualificationBubbleComponent} from './qualification-bubble.component';
 
 describe('QualificationTagComponent', () => {
   let component: QualificationBubbleComponent;
