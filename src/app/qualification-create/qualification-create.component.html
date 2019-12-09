@@ -1,0 +1,23 @@
+<h2>New Qualification</h2>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Name:<br>
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Description:<br>
+      <input type="text" formControlName="description">
+    </label>
+    <label>
+      Colour:<br>
+      <input type="color" formControlName="colour">
+    </label>
+    <label>
+      Order Nr:<br>
+      <input type="number" formControlName="orderNr">
+    </label>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+  <div id="errors">{{error}}</div>
+</div>

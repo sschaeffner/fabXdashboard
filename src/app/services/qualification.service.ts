@@ -2,9 +2,11 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {LoginService} from "./login.service";
 import {environment} from "../../environments/environment";
-import {Observable} from "rxjs";
+import {Observable, throwError} from "rxjs";
 import {Qualification} from "../shared/models/qualification.model";
-import {map, retry} from "rxjs/operators";
+import {catchError, map, retry} from "rxjs/operators";
+import {NewQualification} from "../shared/models/new-qualification.model";
+import {EditQualification} from "../shared/models/edit-qualification.model";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +28,18 @@ export class QualificationService {
         qualifications.sort((q1, q2) => q1.orderNr - q2.orderNr);
         return qualifications;
       })
+    );
+  }
+
+  public createNewQualification(newQualification: NewQualification): Observable<Qualification> {
+    return this.httpService.post<Qualification>(`${this.baseUrl}/qualification`, newQualification, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not create qualification: ${val.message} (${val.error}).`))
+    );
+  }
+
+  public editQualification(id: number, editQualification: EditQualification) {
+    return this.httpService.patch(`${this.baseUrl}/qualification/${id}`, editQualification, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not edit qualification: ${val.message} (${val.error}).`))
     );
   }
 }
