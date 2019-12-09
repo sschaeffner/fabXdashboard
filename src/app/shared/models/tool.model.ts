@@ -1,13 +1,15 @@
 import {Deserializable} from "./deserializable.model";
 import {Qualification} from "./qualification.model";
+import {ToolType} from "./ToolType.model";
+import {ToolState} from "./ToolState.model";
 
 export class Tool implements Deserializable {
   public id: number;
   public deviceId: string;
   public name: string;
   public pin: number;
-  public toolType: string;
-  public toolState: string;
+  public toolType: ToolType;
+  public toolState: ToolState;
   public wikiLink: string;
   public qualifications: Qualification[];
 

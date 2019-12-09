@@ -10,6 +10,7 @@ import {UserCardComponent} from "./user-card/user-card.component";
 import {QualificationsComponent} from "./qualifications/qualifications.component";
 import {DevicesComponent} from "./devices/devices.component";
 import {ToolsComponent} from "./tools/tools.component";
+import {ToolCreateComponent} from "./tool-create/tool-create.component";
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path : 'user/:id/setCard', component: UserCardComponent },
   { path : 'qualification', component: QualificationsComponent },
   { path : 'device', component: DevicesComponent },
-  { path : 'tool', component: ToolsComponent }
+  { path : 'tool', component: ToolsComponent },
+  { path : 'tool/create', component: ToolCreateComponent }
 ];
 
 @NgModule({

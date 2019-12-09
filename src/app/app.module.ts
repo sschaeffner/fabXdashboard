@@ -26,6 +26,7 @@ import {MatInputModule} from "@angular/material/input";
 import {QualificationsComponent} from './qualifications/qualifications.component';
 import {DevicesComponent} from './devices/devices.component';
 import {ToolsComponent} from './tools/tools.component';
+import { ToolCreateComponent } from './tool-create/tool-create.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {ToolsComponent} from './tools/tools.component';
     QualificationBubbleComponent,
     QualificationsComponent,
     DevicesComponent,
-    ToolsComponent
+    ToolsComponent,
+    ToolCreateComponent
   ],
   imports: [
     CommonModule,

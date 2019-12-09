@@ -1,0 +1,55 @@
+<h2>New Tool</h2>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Name:<br>
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Device:<br>
+      <select formControlName="deviceId">
+        <option value=""></option>
+        <option *ngFor="let device of devices" [value]="device.id">
+          {{device.name}}
+        </option>
+      </select>
+    </label>
+    <label>
+      Pin:<br>
+      <input type="number" formControlName="pin">
+    </label>
+    <label>
+      Tool Type:<br>
+      <select formControlName="toolType">
+        <option value=""></option>
+        <option *ngFor="let type of toolTypes" [value]="type">
+          {{type}}
+        </option>
+      </select>
+    </label>
+    <label>
+      Tool State:<br>
+      <select formControlName="toolState">
+        <option value=""></option>
+        <option *ngFor="let state of toolStates" [value]="state">
+          {{state}}
+        </option>
+      </select>
+    </label>
+    <label>
+      Wiki Link:<br>
+      <input type="text" formControlName="wikiLink">
+    </label>
+    <label>
+      Qualification:<br>
+      <select formControlName="qualification">
+        <option value=""></option>
+        <option *ngFor="let q of qualifications" [value]="q.id">
+          {{q.name}}
+        </option>
+      </select>
+    </label>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+  <div id="errors">{{error}}</div>
+</div>
