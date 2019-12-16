@@ -28,6 +28,9 @@ import {DevicesComponent} from './devices/devices.component';
 import {ToolsComponent} from './tools/tools.component';
 import { ToolCreateComponent } from './tool-create/tool-create.component';
 import { QualificationCreateComponent } from './qualification-create/qualification-create.component';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { ToolDetailsComponent } from './tool-details/tool-details.component';
+import { QualificationDetailsComponent } from './qualification-details/qualification-details.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { QualificationCreateComponent } from './qualification-create/qualificati
     DevicesComponent,
     ToolsComponent,
     ToolCreateComponent,
-    QualificationCreateComponent
+    QualificationCreateComponent,
+    DeviceDetailsComponent,
+    ToolDetailsComponent,
+    QualificationDetailsComponent
   ],
   imports: [
     CommonModule,

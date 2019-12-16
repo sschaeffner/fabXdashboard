@@ -1,0 +1,30 @@
+div#navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 1em;
+}
+
+div#navBar button.deleteBtn {
+  margin-left: auto;
+  justify-self: flex-end;
+  background-color: #ff5555;
+}
+
+div#toolDetails {
+  margin-top:1em;
+
+  th, td {
+    padding-right: 2em;
+    text-align: left;
+    vertical-align: middle;
+    height: 1.8em;
+  }
+}
+span.toolId {
+  color: #333;
+}
+
+div#tool button {
+  margin-right: 10px;
+}

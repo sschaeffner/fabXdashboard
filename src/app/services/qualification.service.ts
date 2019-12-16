@@ -20,6 +20,14 @@ export class QualificationService {
     private loginService: LoginService
   ) { }
 
+  public getQualification(id: number): Observable<Qualification> {
+    return this.httpService.get<Qualification>(`${this.baseUrl}/qualification/${id}`, this.loginService.getOptions()).pipe(
+      retry(3),
+      catchError(val => throwError(`Qualification not found: ${val.message} (${val.error}).`)),
+      map(data => new Qualification().deserialize(data))
+    );
+  }
+
   public getAllQualifications(): Observable<Qualification[]> {
     return this.httpService.get<Qualification[]>(`${this.baseUrl}/qualification`, this.loginService.getOptions()).pipe(
       retry(3),

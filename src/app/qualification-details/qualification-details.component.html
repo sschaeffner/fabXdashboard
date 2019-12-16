@@ -1,0 +1,28 @@
+<div id="qualification" *ngIf="qualification">
+  <h2><span class="qualificationId">#{{qualification.id}}</span> {{qualification.name}}</h2>
+
+  <div id="navBar">
+    <button routerLink="/tool/{{qualification.id}}/edit">Edit</button>
+    <button (click)="true" class="deleteBtn">Delete</button>
+  </div>
+  <div id="qualificationDetails">
+    <table>
+      <tr>
+        <td><span>name: </span></td>
+        <td><app-qualification-tag [qualification]="qualification"></app-qualification-tag></td>
+      </tr>
+      <tr>
+        <td><span>description: </span></td>
+        <td>{{qualification.description}}</td>
+      </tr>
+      <tr>
+        <td><span>colour: </span></td>
+        <td>{{qualification.colour}}</td>
+      </tr>
+      <tr>
+        <td><span>order nr: </span></td>
+        <td>{{qualification.orderNr}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

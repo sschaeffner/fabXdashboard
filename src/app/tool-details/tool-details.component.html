@@ -1,0 +1,42 @@
+<div id="tool" *ngIf="tool">
+  <h2><span class="toolId">#{{tool.id}}</span> {{tool.name}}</h2>
+
+  <div id="navBar">
+    <button routerLink="/tool/{{tool.id}}/edit">Edit</button>
+    <button (click)="true" class="deleteBtn">Delete</button>
+  </div>
+  <div id="toolDetails">
+    <table>
+      <tr>
+        <td><span>device id: </span></td>
+        <td><a routerLink="/device/{{tool.deviceId}}">{{tool.deviceId}}</a></td>
+      </tr>
+      <tr>
+        <td><span>name: </span></td>
+        <td>{{tool.name}}</td>
+      </tr>
+      <tr>
+        <td><span>pin: </span></td>
+        <td>{{tool.pin}}</td>
+      </tr>
+      <tr>
+        <td><span>type: </span></td>
+        <td>{{tool.toolType}}</td>
+      </tr>
+      <tr>
+        <td><span>state: </span></td>
+        <td>{{tool.toolState}}</td>
+      </tr>
+      <tr>
+        <td><span>wiki link: </span></td>
+        <td><a href="{{tool.wikiLink}}">{{tool.wikiLink}}</a></td>
+      </tr>
+      <tr>
+        <td><span>qualifications: </span></td>
+        <td>
+          <app-qualification-tag *ngFor="let qualification of tool.qualifications" [qualification]="qualification"></app-qualification-tag>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

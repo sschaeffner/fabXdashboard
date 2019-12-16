@@ -1,0 +1,40 @@
+<div id="device" *ngIf="device">
+  <h2><span class="deviceId">#{{device.id}}</span> {{device.name}}</h2>
+
+  <div id="navBar">
+    <button routerLink="/device/{{device.id}}/edit">Edit</button>
+    <button (click)="true" class="deleteBtn">Delete</button>
+  </div>
+  <div id="deviceDetails">
+    <table>
+      <tr>
+        <td><span>name: </span></td>
+        <td>{{device.name}}</td>
+      </tr>
+      <tr>
+        <td><span>mac: </span></td>
+        <td>{{device.mac}}</td>
+      </tr>
+      <tr>
+        <td><span>background: </span></td>
+        <td>{{device.bgImageUrl}}</td>
+      </tr>
+      <tr>
+        <td><span>backup backend: </span></td>
+        <td>{{device.backupBackendUrl}}</td>
+      </tr>
+      <tr>
+        <td><span>mac: </span></td>
+        <td>{{device.mac}}</td>
+      </tr>
+      <tr>
+        <td><span>tools: </span></td>
+        <td>
+          <span *ngFor="let tool of device.tools">
+            <a routerLink="/tool/{{tool.id}}">{{tool.name}}</a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
