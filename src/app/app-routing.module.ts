@@ -15,6 +15,8 @@ import {QualificationCreateComponent} from "./qualification-create/qualification
 import {DeviceDetailsComponent} from "./device-details/device-details.component";
 import {ToolDetailsComponent} from "./tool-details/tool-details.component";
 import {QualificationDetailsComponent} from "./qualification-details/qualification-details.component";
+import {DeviceEditComponent} from "./device-edit/device-edit.component";
+import {ToolEditComponent} from "./tool-edit/tool-edit.component";
 
 
 const routes: Routes = [
@@ -31,9 +33,11 @@ const routes: Routes = [
   { path : 'qualification/:id', component: QualificationDetailsComponent },
   { path : 'device', component: DevicesComponent },
   { path : 'device/:id', component: DeviceDetailsComponent },
+  { path : 'device/:id/edit', component: DeviceEditComponent },
   { path : 'tool', component: ToolsComponent },
   { path : 'tool/create', component: ToolCreateComponent },
-  { path : 'tool/:id', component: ToolDetailsComponent }
+  { path : 'tool/:id', component: ToolDetailsComponent },
+  { path : 'tool/:id/edit', component: ToolEditComponent }
 ];
 
 @NgModule({

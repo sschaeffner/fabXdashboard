@@ -1,0 +1,35 @@
+$base-color: #FA9112;
+$base-color-light: #FCCC89;
+
+span.toolId {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin: 1em 0;
+  color: #333333;
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+  margin-top: .5em;
+  width: 100%;
+}
+span.qualificationSpan {
+  display: block;
+}
+label.qualificationLabel {
+  margin: 0;
+  font-weight: initial;
+  display: initial;
+}
+input.qualificationCheckbox {
+  width: initial;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0;
+  vertical-align: middle;
+}

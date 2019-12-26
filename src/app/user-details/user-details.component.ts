@@ -35,7 +35,7 @@ export class UserDetailsComponent implements OnInit {
     let userObs: Observable<User> = this.userService.getUser(userId);//.subscribe(user => this.user = user);
     let qualificationsObs: Observable<Qualification[]> = this.qualificationService.getAllQualifications();
 
-    forkJoin(userObs, qualificationsObs).subscribe(responseList => {
+    forkJoin([userObs, qualificationsObs]).subscribe(responseList => {
       console.log("userObs result: %o", responseList[0]);
       console.log("qualificationsObs result: %o", responseList[1]);
 

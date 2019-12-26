@@ -31,6 +31,8 @@ import { QualificationCreateComponent } from './qualification-create/qualificati
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 import { ToolDetailsComponent } from './tool-details/tool-details.component';
 import { QualificationDetailsComponent } from './qualification-details/qualification-details.component';
+import { DeviceEditComponent } from './device-edit/device-edit.component';
+import { ToolEditComponent } from './tool-edit/tool-edit.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { QualificationDetailsComponent } from './qualification-details/qualifica
     QualificationCreateComponent,
     DeviceDetailsComponent,
     ToolDetailsComponent,
-    QualificationDetailsComponent
+    QualificationDetailsComponent,
+    DeviceEditComponent,
+    ToolEditComponent
   ],
   imports: [
     CommonModule,

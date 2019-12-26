@@ -1,0 +1,57 @@
+<div id="tool" *ngIf="tool" xmlns="http://www.w3.org/1999/html">
+  <h2><span class="toolId">#{{tool.id}}</span> {{tool.name}}</h2>
+
+  <div id="toolEdit">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Device:<br>
+        <select formControlName="deviceId">
+          <option value=""></option>
+          <option *ngFor="let device of devices" [value]="device.id">
+            {{device.name}}
+          </option>
+        </select>
+      </label>
+      <label>
+        Name: <br>
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        Pin: <br>
+        <input type="number" formControlName="pin">
+      </label>
+      <label>
+        Tool Type:<br>
+        <select formControlName="toolType">
+          <option value=""></option>
+          <option *ngFor="let type of toolTypes" [value]="type">
+            {{type}}
+          </option>
+        </select>
+      </label>
+      <label>
+        Tool State:<br>
+        <select formControlName="toolState">
+          <option value=""></option>
+          <option *ngFor="let state of toolStates" [value]="state">
+            {{state}}
+          </option>
+        </select>
+      </label>
+      <label>
+        Wiki Link:<br>
+        <input type="text" formControlName="wikiLink">
+      </label>
+      <label formGroupName="qualifications">
+        Qualifications:<br>
+        <span *ngFor="let qualification of qualifications" class="qualificationSpan">
+          <input type="checkbox" value="{{qualification.id}}" id="qualification{{qualification.id}}" class="qualificationCheckbox" formControlName="{{qualification.id}}">
+          <label for="qualification{{qualification.id}}" class="qualificationLabel"><app-qualification-tag [qualification]="qualification"></app-qualification-tag></label>
+        </span>
+      </label>
+
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+      <div id="errors">{{error}}</div>
+    </form>
+  </div>
+</div>

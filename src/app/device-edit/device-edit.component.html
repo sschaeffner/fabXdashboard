@@ -1,0 +1,30 @@
+<div id="device" *ngIf="device">
+  <h2><span class="deviceId">#{{device.id}}</span> {{device.name}}</h2>
+
+  <div id="deviceEdit">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Name: <br>
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        MAC: <br>
+        <input type="text" formControlName="mac">
+      </label>
+      <label>
+        Secret: <br>
+        <input type="text" formControlName="secret">
+      </label>
+      <label>
+        Background: <br>
+        <input type="url" formControlName="bgImageUrl">
+      </label>
+      <label>
+        Backup Backend: <br>
+        <input type="url" formControlName="backupBackendUrl">
+      </label>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+  </div>
+  <div id="errors">{{error}}</div>
+</div>
