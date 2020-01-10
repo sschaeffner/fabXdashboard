@@ -17,6 +17,7 @@ import {ToolDetailsComponent} from "./tool-details/tool-details.component";
 import {QualificationDetailsComponent} from "./qualification-details/qualification-details.component";
 import {DeviceEditComponent} from "./device-edit/device-edit.component";
 import {ToolEditComponent} from "./tool-edit/tool-edit.component";
+import {QualificationEditComponent} from "./qualification-edit/qualification-edit.component";
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path : 'qualification', component: QualificationsComponent },
   { path : 'qualification/create', component: QualificationCreateComponent },
   { path : 'qualification/:id', component: QualificationDetailsComponent },
+  { path : 'qualification/:id/edit', component: QualificationEditComponent },
   { path : 'device', component: DevicesComponent },
   { path : 'device/:id', component: DeviceDetailsComponent },
   { path : 'device/:id/edit', component: DeviceEditComponent },

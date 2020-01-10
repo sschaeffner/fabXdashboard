@@ -1,0 +1,20 @@
+$base-color: #FA9112;
+$base-color-light: #FCCC89;
+
+span.qualificationId {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin: 1em 0;
+  color: #333333;
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+  margin-top: .5em;
+  width: 100%;
+}

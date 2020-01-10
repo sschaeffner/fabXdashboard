@@ -33,6 +33,7 @@ import { ToolDetailsComponent } from './tool-details/tool-details.component';
 import { QualificationDetailsComponent } from './qualification-details/qualification-details.component';
 import { DeviceEditComponent } from './device-edit/device-edit.component';
 import { ToolEditComponent } from './tool-edit/tool-edit.component';
+import { QualificationEditComponent } from './qualification-edit/qualification-edit.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ToolEditComponent } from './tool-edit/tool-edit.component';
     ToolDetailsComponent,
     QualificationDetailsComponent,
     DeviceEditComponent,
-    ToolEditComponent
+    ToolEditComponent,
+    QualificationEditComponent
   ],
   imports: [
     CommonModule,
