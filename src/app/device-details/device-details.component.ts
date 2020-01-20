@@ -23,8 +23,21 @@ export class DeviceDetailsComponent implements OnInit {
     this.getDevice();
   }
 
-  getDevice(): void {
+  getDevice() {
     const deviceId = +this.route.snapshot.paramMap.get('id');
     this.deviceService.getDevice(deviceId).subscribe(device => this.device = device);
+  }
+
+  deleteDevice() {
+    let confirmDelete = confirm(`Delete device ${this.device.name}?`);
+    if (confirmDelete) {
+      this.deviceService.deleteDevice(this.device.id).subscribe(
+        () => {
+          this.router.navigateByUrl('/device');
+        },
+        error => {
+          alert(`Could not delete device! Are all tools removed? \n${error}`);
+        });
+    }
   }
 }

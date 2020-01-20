@@ -26,4 +26,17 @@ export class ToolDetailsComponent implements OnInit {
     const toolId = +this.route.snapshot.paramMap.get('id');
     this.toolService.getTool(toolId).subscribe(tool => this.tool = tool);
   }
+
+  deleteTool() {
+    let confirmDelete = confirm(`Delete tool ${this.tool.name}?`);
+    if (confirmDelete) {
+      this.toolService.deleteTool(this.tool.id).subscribe(
+        () => {
+          this.router.navigateByUrl('/tool');
+        },
+        error => {
+          alert(`Could not delete tool! Are all qualifications removed? \n${error}`);
+        });
+    }
+  }
 }

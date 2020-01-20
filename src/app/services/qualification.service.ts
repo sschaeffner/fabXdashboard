@@ -50,4 +50,10 @@ export class QualificationService {
       catchError(val => throwError(`Could not edit qualification: ${val.message} (${val.error}).`))
     );
   }
+
+  public deleteQualification(id: number) {
+    return this.httpService.delete(`${this.baseUrl}/qualification/${id}`, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not delete qualification: ${val.message} (${val.error}).`))
+    );
+  }
 }

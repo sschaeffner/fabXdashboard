@@ -46,4 +46,10 @@ export class ToolService {
       catchError(val => throwError(`Could not edit tool: ${val.message} (${val.error}).`))
     );
   }
+
+  public deleteTool(id: number) {
+    return this.httpService.delete(`${this.baseUrl}/tool/${id}`, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not delete tool: ${val.message} (${val.error}).`))
+    );
+  }
 }

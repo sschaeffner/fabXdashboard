@@ -46,4 +46,10 @@ export class DeviceService {
       catchError(val => throwError(`Could not edit device: ${val.message} (${val.error}).`))
     );
   }
+
+  public deleteDevice(id: number) {
+    return this.httpService.delete(`${this.baseUrl}/device/${id}`, this.loginService.getOptions()).pipe(
+      catchError(val => throwError(`Could not delete device: ${val.message} (${val.error}).`))
+    );
+  }
 }
