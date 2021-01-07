@@ -63,11 +63,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Deploy with Netlify
 * Fork this repo
 * Login to Netlify with Github
-* Create a new site form Git
+* Create a new site from Git
 * Authorize and install Netlify for Github
-* Select the dashboard repo
+* Select your forked dashboard repo
 * Setup master/main branch for deployment
-* replace the build command with ```ng build --configuration production ```
+* replace the build command with ```ng build --configuration=production```
 * replace the publish directory with ```dist/fabx-dashboard ```
 * Under the Site settings tab, the site name can be changed
 * The site can be accessed under https://[sitename].netlify.app
