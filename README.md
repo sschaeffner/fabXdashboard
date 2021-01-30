@@ -61,14 +61,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Deploy with Netlify
-* Fork this repo
-* Login to Netlify with Github
+* Fork this repository
+* Adapt the `baseUrl` in `src/environments/environment.prod.ts` to the URL of your deployment of [fabXaccess](https://github.com/sschaeffner/fabXaccess)
+* Login to Netlify (e.g. with Github)
 * Create a new site from Git
-* Authorize and install Netlify for Github
-* Select your forked dashboard repo
+* Authorize Netlify for Github
+* Select your forked fabXdashboard repository
 * Setup master/main branch for deployment
-* replace the build command with ```ng build --configuration=production```
-* replace the publish directory with ```dist/fabx-dashboard ```
+  * replace the build command with ```ng build --configuration=production```
+  * replace the publish directory with ```dist/fabx-dashboard ```
 * Under the Site settings tab, the site name can be changed
 * The site can be accessed under https://[sitename].netlify.app
 
