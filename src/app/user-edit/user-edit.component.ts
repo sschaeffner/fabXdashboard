@@ -20,7 +20,7 @@ export class UserEditComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     wikiName: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required),
+    phoneNumber: new FormControl(''),
     locked: new FormControl(''),
     lockedReason: new FormControl('')
   });

@@ -6,7 +6,6 @@
       <label>
         Device:<br>
         <select formControlName="deviceId">
-          <option value=""></option>
           <option *ngFor="let device of devices" [value]="device.id">
             {{device.name}}
           </option>
@@ -23,7 +22,6 @@
       <label>
         Tool Type:<br>
         <select formControlName="toolType">
-          <option value=""></option>
           <option *ngFor="let type of toolTypes" [value]="type">
             {{type}}
           </option>
@@ -32,7 +30,6 @@
       <label>
         Tool State:<br>
         <select formControlName="toolState">
-          <option value=""></option>
           <option *ngFor="let state of toolStates" [value]="state">
             {{state}}
           </option>

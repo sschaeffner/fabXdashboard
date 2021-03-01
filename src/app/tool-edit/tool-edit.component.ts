@@ -33,7 +33,7 @@ export class ToolEditComponent implements OnInit {
     pin: new FormControl('', Validators.required),
     toolType: new FormControl('', Validators.required),
     toolState: new FormControl('', Validators.required),
-    wikiLink: new FormControl('', Validators.required),
+    wikiLink: new FormControl(''),
     qualifications: new FormGroup({})
   });
 

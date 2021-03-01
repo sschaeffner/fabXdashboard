@@ -18,7 +18,7 @@ export class UserCreateComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     wikiName: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required)
+    phoneNumber: new FormControl('')
   });
 
   constructor(

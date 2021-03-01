@@ -30,7 +30,6 @@
     <label>
       Tool State:<br>
       <select formControlName="toolState">
-        <option value=""></option>
         <option *ngFor="let state of toolStates" [value]="state">
           {{state}}
         </option>

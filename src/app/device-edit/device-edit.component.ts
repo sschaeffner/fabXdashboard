@@ -21,7 +21,7 @@ export class DeviceEditComponent implements OnInit {
     mac: new FormControl('', Validators.required),
     secret: new FormControl('', Validators.required),
     bgImageUrl: new FormControl('', Validators.required),
-    backupBackendUrl: new FormControl('', Validators.required)
+    backupBackendUrl: new FormControl('')
   });
 
   constructor(
