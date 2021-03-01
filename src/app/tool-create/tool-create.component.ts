@@ -30,8 +30,8 @@ export class ToolCreateComponent implements OnInit {
     deviceId: new FormControl('', Validators.required),
     pin: new FormControl('', Validators.required),
     toolType: new FormControl('', Validators.required),
-    toolState: new FormControl('', Validators.required),
-    wikiLink: new FormControl('', Validators.required),
+    toolState: new FormControl('GOOD', Validators.required),
+    wikiLink: new FormControl(''),
     qualification: new FormControl('', Validators.required)
   });
 

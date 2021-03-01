@@ -17,8 +17,8 @@ export class QualificationCreateComponent implements OnInit {
   form = new FormGroup({
     name: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
-    colour: new FormControl('', Validators.required),
-    orderNr: new FormControl('', Validators.required)
+    colour: new FormControl('#000000', Validators.required),
+    orderNr: new FormControl('1', Validators.required)
   });
 
   constructor(
