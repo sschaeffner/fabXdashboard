@@ -35,7 +35,8 @@ export class QualificationDetailsComponent implements OnInit {
           this.router.navigateByUrl('/qualification');
         },
         error => {
-          alert(`Could not delete qualification!\n${error}`);
+          alert(`Could not delete qualification! Are all references to qualification removed `
+            + `(users having this qualification / device requiring this qualification)?\n${error}`);
         });
     }
   }
