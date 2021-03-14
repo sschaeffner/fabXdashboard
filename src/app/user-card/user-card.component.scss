@@ -17,6 +17,16 @@ textarea {
   margin-top: .5em;
   width: 100%;
 }
-div#userCard button {
+div#btnBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 1em;
+}
+div#btnBar div#userCard button {
   margin-right: 10px;
+}
+div#btnBar button.deleteBtn {
+  margin-left: auto;
+  background-color: #ff5555;
 }
