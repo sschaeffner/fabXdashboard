@@ -82,6 +82,22 @@ export class UserCardComponent implements OnInit {
       );
   }
 
+  deleteCard() {
+    let confirmDelete = confirm(`Delete card for ${this.user.firstName} ${this.user.lastName}?`);
+    if (confirmDelete) {
+      this.userService.removeCard(this.user.id).subscribe(
+        () => {
+          console.log("user card successfully removed");
+          this.router.navigateByUrl(`/user/${this.user.id}`);
+        },
+        error => {
+          this.error = error;
+          console.error("user card not successfully removed: %o", error);
+        }
+      )
+    }
+  }
+
   qrCodeReader() {
     console.log("qr");
     this.qrCodeReading = true;

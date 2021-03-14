@@ -2,7 +2,10 @@
   <h2><span class="userId">#{{user.id}}</span> {{user.firstName}} {{user.lastName}}</h2>
   <div id="userCard">
     <zxing-scanner [formats]="['QR_CODE']" *ngIf="qrCodeReading" (scanSuccess)="onQrSuccess($event)"></zxing-scanner>
-    <button (click)="qrCodeReader()">QR Code</button>
+    <div id="btnBar" *ngIf="!qrCodeReading">
+      <button (click)="qrCodeReader()">QR Code</button>
+      <button (click)="deleteCard()" class="deleteBtn">Delete Card</button>
+    </div>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <label>
         CardId and cardSecret:<br>

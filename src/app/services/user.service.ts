@@ -47,6 +47,13 @@ export class UserService {
     );
   }
 
+  public removeCard(id: number) {
+    let editUserRemoveCard = new EditUser();
+    editUserRemoveCard.cardId = "";
+    editUserRemoveCard.cardSecret = "";
+    return this.editUser(id, editUserRemoveCard);
+  }
+
   public addQualification(userId: number, qualificationId: number) {
     return this.httpService.post(`${this.baseUrl}/user/${userId}/qualifications`,
       { 'userId' : userId, 'qualificationId' : qualificationId},
