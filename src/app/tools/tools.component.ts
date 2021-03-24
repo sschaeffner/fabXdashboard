@@ -11,12 +11,14 @@ import {ToolService} from "../services/tool.service";
 })
 export class ToolsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'qualifications'];
+  displayedColumns: string[] = ['id', 'name', 'toolState', 'qualifications'];
 
   tools: Tool[] = [];
   dataSource: MatTableDataSource<Tool> = new MatTableDataSource<Tool>();
 
   @ViewChild(MatSort, {static: false}) sort: MatSort;
+
+  ToolState: any;
 
   constructor(private toolService: ToolService) { }
 
