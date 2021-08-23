@@ -2,6 +2,7 @@ import {Deserializable} from "./deserializable.model";
 import {Qualification} from "./qualification.model";
 import {ToolType} from "./ToolType.model";
 import {ToolState} from "./ToolState.model";
+import {IdleState} from "./IdleState.model";
 
 export class Tool implements Deserializable {
   public id: number;
@@ -9,6 +10,8 @@ export class Tool implements Deserializable {
   public name: string;
   public pin: number;
   public toolType: ToolType;
+  public time: number;
+  public idleState: IdleState;
   public toolState: ToolState;
   public wikiLink: string;
   public qualifications: Qualification[];
