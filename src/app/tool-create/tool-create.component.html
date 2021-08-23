@@ -28,6 +28,18 @@
       </select>
     </label>
     <label>
+      Time:<br>
+      <input type="number" formControlName="time">
+    </label>
+    <label>
+      Idle State:<br>
+      <select formControlName="idleState">
+        <option *ngFor="let state of idleStates" [value]="state">
+          {{state}}
+        </option>
+      </select>
+    </label>
+    <label>
       Tool State:<br>
       <select formControlName="toolState">
         <option *ngFor="let state of toolStates" [value]="state">

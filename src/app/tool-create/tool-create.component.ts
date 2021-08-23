@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {NewTool} from "../shared/models/new-tool.model";
 import {ToolService} from "../services/tool.service";
@@ -10,6 +10,7 @@ import {ToolType} from "../shared/models/ToolType.model";
 import {ToolState} from "../shared/models/ToolState.model";
 import {Qualification} from "../shared/models/qualification.model";
 import {QualificationService} from "../services/qualification.service";
+import {IdleState} from "../shared/models/IdleState.model";
 
 @Component({
   selector: 'app-tool-create',
@@ -23,6 +24,7 @@ export class ToolCreateComponent implements OnInit {
   devices: Device[] = [];
   qualifications: Qualification[] = [];
   toolTypes: string[] = [];
+  idleStates: string[] = [];
   toolStates: string[] = [];
 
   form = new FormGroup({
@@ -30,6 +32,8 @@ export class ToolCreateComponent implements OnInit {
     deviceId: new FormControl('', Validators.required),
     pin: new FormControl('', Validators.required),
     toolType: new FormControl('', Validators.required),
+    time: new FormControl('', Validators.required),
+    idleState: new FormControl('IDLE_HIGH', Validators.required),
     toolState: new FormControl('GOOD', Validators.required),
     wikiLink: new FormControl(''),
     qualification: new FormControl('', Validators.required)
@@ -46,6 +50,7 @@ export class ToolCreateComponent implements OnInit {
     this.getDevices();
     this.getQualifications();
     this.toolTypes = Object.keys(ToolType);
+    this.idleStates = Object.keys(IdleState);
     this.toolStates = Object.keys(ToolState);
   }
 
@@ -55,6 +60,8 @@ export class ToolCreateComponent implements OnInit {
     newTool.deviceId = this.form.get('deviceId').value;
     newTool.pin = this.form.get('pin').value;
     newTool.toolType = this.form.get('toolType').value;
+    newTool.time = this.form.get('time').value;
+    newTool.idleState = this.form.get('idleState').value;
     newTool.toolState = this.form.get('toolState').value;
     newTool.wikiLink = this.form.get('wikiLink').value;
     newTool.qualifications = [this.form.get('qualification').value];

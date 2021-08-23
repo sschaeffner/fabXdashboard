@@ -11,6 +11,7 @@ import {ToolState} from "../shared/models/ToolState.model";
 import {Qualification} from "../shared/models/qualification.model";
 import {QualificationService} from "../services/qualification.service";
 import {forkJoin, Observable} from "rxjs";
+import {IdleState} from "../shared/models/IdleState.model";
 
 @Component({
   selector: 'app-tool-edit',
@@ -25,6 +26,7 @@ export class ToolEditComponent implements OnInit {
   devices: Device[] = [];
   qualifications: Qualification[] = [];
   toolTypes: string[] = [];
+  idleStates: string[] = [];
   toolStates: string[] = [];
 
   form = new FormGroup({
@@ -32,6 +34,8 @@ export class ToolEditComponent implements OnInit {
     name: new FormControl('', Validators.required),
     pin: new FormControl('', Validators.required),
     toolType: new FormControl('', Validators.required),
+    time: new FormControl('', Validators.required),
+    idleState: new FormControl('', Validators.required),
     toolState: new FormControl('', Validators.required),
     wikiLink: new FormControl(''),
     qualifications: new FormGroup({})
@@ -50,6 +54,7 @@ export class ToolEditComponent implements OnInit {
     this.getDevices();
     let qualificationsObs = this.getQualifications();
     this.toolTypes = Object.keys(ToolType);
+    this.idleStates = Object.keys(IdleState);
     this.toolStates = Object.keys(ToolState);
 
     forkJoin([toolObs, qualificationsObs]).subscribe(o => {
@@ -85,6 +90,8 @@ export class ToolEditComponent implements OnInit {
         name: this.tool.name,
         pin: this.tool.pin,
         toolType: this.tool.toolType,
+        time: this.tool.time,
+        idleState: this.tool.idleState,
         toolState: this.tool.toolState,
         wikiLink: this.tool.wikiLink
       });
@@ -99,6 +106,8 @@ export class ToolEditComponent implements OnInit {
     editTool.name = this.form.get('name').value;
     editTool.pin = this.form.get('pin').value;
     editTool.toolType = this.form.get('toolType').value;
+    editTool.time = this.form.get('time').value;
+    editTool.idleState = this.form.get('idleState').value;
     editTool.toolState = this.form.get('toolState').value;
     editTool.wikiLink = this.form.get('wikiLink').value;
     editTool.qualifications = [];
