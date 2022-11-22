@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://fabx-access.herokuapp.com/api/v1'
+  baseUrl: 'https://fablab-muenchen-1.fabx.cloud/api/v1'
 };
